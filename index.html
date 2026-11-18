@@ -6,7 +6,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta name="robots" content="noindex, nofollow">
 <title>Crewe Optical | Independent Opticians on Market Street, Crewe</title>
-<meta name="description" content="Crewe Optical, the independent optician in Crewe town centre. Free eye tests for all NHS and private patients, including a free OCT scan. Urgent eye care through CUES and PEARS. Open seven days a week on Market Street.">
+<meta name="description" content="Crewe Optical, the independent optician in Crewe town centre. Rated 5.0 from 455 Google reviews. Free eye tests for all NHS and private patients, including a free OCT scan. Urgent eye care through CUES and PEARS. Open seven days a week on Market Street.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
@@ -252,21 +252,40 @@
   .sister a.tel{color:#fff;font-weight:700}
 
   /* Reviews */
-  .reviews .panel{background:var(--stone);border-radius:44px;padding:72px;display:grid;grid-template-columns:1.2fr 1fr;gap:48px;align-items:center;position:relative;overflow:hidden}
-  .reviews .panel::after{content:"";position:absolute;right:-140px;top:-140px;width:420px;height:420px;border-radius:50%;border:60px solid rgba(255,255,255,.35)}
-  .reviews h2{margin:18px 0 20px}
+  .reviews{background:var(--stone);border-radius:44px;margin:0 16px}
+  .rv-head{display:grid;grid-template-columns:1.25fr 1fr;gap:56px;align-items:end;margin-bottom:48px}
+  .rv-head h2{margin:18px 0 20px}
   .reviews .eyebrow::before{background:var(--ink);box-shadow:0 0 0 4px rgba(38,21,10,.14)}
   .reviews .lead{color:var(--charcoal)}
-  .g-card{background:#fff;border-radius:24px;padding:30px;position:relative;z-index:1;box-shadow:0 30px 60px -30px rgba(38,21,10,.4)}
-  .g-card .row{display:flex;align-items:center;justify-content:space-between;margin-bottom:18px}
-  .g-card p{font-size:15px;color:var(--muted)}
-  .g-card .live{font-size:12px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:#1a7f37;display:flex;align-items:center;gap:8px}
-  .g-card .live::before{content:"";width:8px;height:8px;border-radius:50%;background:#1a7f37;animation:pulse 1.6s ease-in-out infinite}
-  @keyframes pulse{50%{opacity:.25}}
-  .g-card .skeleton{display:grid;gap:8px;margin:18px 0}
-  .g-card .skeleton i{display:block;height:10px;border-radius:6px;background:linear-gradient(90deg,#eee 0%,#f7f7f7 50%,#eee 100%);background-size:200% 100%;animation:shimmer 1.8s linear infinite}
-  .g-card .skeleton i:nth-child(2){width:86%}.g-card .skeleton i:nth-child(3){width:64%}
-  @keyframes shimmer{to{background-position:-200% 0}}
+  .rv-score{background:var(--slate);color:#fff;border-radius:var(--radius);padding:30px 32px;display:grid;grid-template-columns:auto 1fr;gap:6px 22px;align-items:center;box-shadow:0 30px 60px -30px rgba(38,21,10,.5)}
+  .rv-score .big{grid-row:span 2;font-size:clamp(64px,7vw,96px);font-weight:800;letter-spacing:-.05em;line-height:.9;color:var(--accent)}
+  .rv-score .stars{display:flex;gap:3px;color:var(--accent)}
+  .rv-score .count{font-size:15px;font-weight:600;color:#E6D9C4;display:flex;align-items:center;gap:8px}
+  .rv-score .count b{color:#fff;font-size:18px}
+  .rv-score .btn{grid-column:1/-1;justify-self:start;margin-top:14px}
+  .rv-track{display:flex;gap:20px;overflow-x:auto;scroll-snap-type:x mandatory;scroll-behavior:smooth;padding:6px 2px 52px;margin:0 -2px -22px;scrollbar-width:none}
+  .rv-track::-webkit-scrollbar{display:none}
+  .rv-card{flex:none;width:360px;scroll-snap-align:start;background:var(--paper);border-radius:24px;padding:26px 26px 22px;display:flex;flex-direction:column;gap:14px;box-shadow:0 24px 44px -30px rgba(38,21,10,.45);transition:transform .4s cubic-bezier(.2,.8,.2,1)}
+  .rv-card:hover{transform:translateY(-6px)}
+  .rv-top{display:flex;align-items:center;gap:12px}
+  .rv-top .av{flex:none;width:44px;height:44px;border-radius:50%;background:var(--accent);color:var(--ink);display:grid;place-items:center;font-family:var(--serif);font-style:italic;font-size:24px;line-height:1}
+  .rv-card:nth-child(3n+2) .av{background:var(--slate);color:var(--accent)}
+  .rv-card:nth-child(3n) .av{background:var(--accent-soft);color:var(--ink)}
+  .rv-top b{display:block;font-size:16px;letter-spacing:-.01em;line-height:1.2}
+  .rv-top small{display:block;font-size:13px;color:var(--muted);font-weight:600}
+  .rv-top .g{margin-left:auto;flex:none}
+  .rv-card .stars{display:flex;gap:2px;color:#F5B400}
+  .rv-card p{font-size:15.5px;color:var(--charcoal);line-height:1.55;display:-webkit-box;-webkit-line-clamp:7;-webkit-box-orient:vertical;overflow:hidden}
+  .rv-card.open p{-webkit-line-clamp:unset;display:block}
+  .rv-card .more{display:none;align-self:flex-start;background:none;border:0;padding:0;font:inherit;font-size:14px;font-weight:700;color:var(--ink);text-decoration:underline;text-underline-offset:3px;cursor:pointer}
+  .rv-card.long .more{display:block}
+  .rv-card .src{margin-top:auto;padding-top:12px;border-top:1px solid var(--line);font-size:12px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:var(--muted)}
+  .rv-foot{display:flex;justify-content:space-between;align-items:center;gap:20px;flex-wrap:wrap}
+  .rv-foot p{font-size:14px;color:var(--muted)}
+  .rv-nav{display:flex;gap:10px}
+  .rv-nav button{width:48px;height:48px;border-radius:50%;border:1.5px solid var(--ink);background:transparent;color:var(--ink);display:grid;place-items:center;cursor:pointer;transition:background .25s,color .25s}
+  .rv-nav button:hover{background:var(--ink);color:#fff}
+  .rv-nav .prev svg{transform:rotate(180deg)}
 
   /* FAQ */
   .faq .wrap{display:grid;grid-template-columns:.85fr 1.15fr;gap:72px;align-items:start}
@@ -357,7 +376,7 @@
     .sister .go{grid-column:1/-1}
   }
   @media (max-width:1024px){
-    .hero .wrap.grid,.story .wrap,.tech .wrap,.faq .wrap,.contact .wrap,.section-head,.reviews .panel,.urgent .panel{grid-template-columns:1fr}
+    .hero .wrap.grid,.story .wrap,.tech .wrap,.faq .wrap,.contact .wrap,.section-head,.rv-head,.urgent .panel{grid-template-columns:1fr}
     .hero-media .frame{aspect-ratio:16/10}
     .hero-media .frame img{object-position:50% 50%}
     .badge{left:auto;right:24px;bottom:-40px}
@@ -405,8 +424,11 @@
     .gallery-track figure:nth-child(even){height:240px;margin-top:50px}
     .pills{margin-bottom:36px}
     .checks{grid-template-columns:1fr}
-    .urgent .panel,.reviews .panel{padding:40px 24px;border-radius:32px}
-    .reviews .panel::after{display:none}
+    .urgent .panel{padding:40px 24px;border-radius:32px}
+    .reviews{margin:0;border-radius:32px}
+    .rv-head{gap:32px;margin-bottom:32px}
+    .rv-score{padding:26px 24px}
+    .rv-card{width:min(300px,82vw)}
     .where{padding:6px 22px}
     .where .serious{margin:0 -22px -6px;padding:20px 22px}
     .practice .body{grid-template-columns:1fr;padding:26px}
@@ -450,7 +472,7 @@
       <a class="link" href="#free-eye-tests">Free eye tests</a>
       <a class="link" href="#services">Services</a>
       <a class="link" href="#urgent">Urgent care</a>
-      <a class="link" href="#questions">Questions</a>
+      <a class="link" href="#reviews">Reviews</a>
       <a class="link" href="#visit">Find us</a>
       <a class="btn btn-dark" href="https://blinkoms.co.uk/blinkdiary/creweoptical/booking" target="_blank" rel="noopener">Book online
         <span class="arrow"><svg width="16" height="16"><use href="#arrow"/></svg></span></a>
@@ -472,9 +494,10 @@
         <a class="btn btn-ghost" href="tel:+441270695835">Call 01270 695 835</a>
       </div>
       <div class="trust reveal d3">
-        <span><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#26150A" stroke-width="2.4"><path d="M20 6 9 17l-5-5"/></svg>Free OCT scan included</span>
-        <span><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#26150A" stroke-width="2.4"><path d="M2 12s3.6-7 10-7 10 7 10 7-3.6 7-10 7S2 12 2 12z"/><circle cx="12" cy="12" r="3"/></svg>Urgent eye care</span>
-        <span><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#26150A" stroke-width="2.4"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg>Open seven days a week</span>
+        <span><svg width="18" height="18" viewBox="0 0 24 24" fill="#E8C204" stroke="#26150A" stroke-width="1.6" stroke-linejoin="round"><path d="M12 2l3 6.3 6.9.9-5 4.8 1.2 6.9L12 17.6l-6.1 3.3 1.2-6.9-5-4.8 6.9-.9z"/></svg>5.0 from 455 Google reviews</span>
+        <span><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#26150A" stroke-width="2.4"><path d="M20 6 9 17l-5-5"/></svg>Free OCT scan</span>
+        
+        <span><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#26150A" stroke-width="2.4"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg>Open seven days</span>
       </div>
     </div>
     <div class="hero-media reveal d2">
@@ -484,7 +507,7 @@
           <div class="stars" aria-hidden="true"><svg width="14" height="14"><use href="#rstar"/></svg><svg width="14" height="14"><use href="#rstar"/></svg><svg width="14" height="14"><use href="#rstar"/></svg><svg width="14" height="14"><use href="#rstar"/></svg><svg width="14" height="14"><use href="#rstar"/></svg></div>
           <div class="num">5.0</div>
         </div>
-        <small>Google rating from<br>300+ patient reviews</small>
+        <small>Google rating from<br><b style="color:var(--ink)">455 patient reviews</b></small>
       </div>
       <div class="badge" aria-hidden="true">
         <svg class="ring" viewBox="0 0 150 150">
@@ -611,13 +634,94 @@
 <section class="stats">
   <div class="wrap">
     <div class="stat reveal"><div class="n">£0</div><p>For your eye test, NHS or private, with an OCT scan included</p></div>
-    <div class="stat reveal d1"><div class="n"><span data-count="7">7</span></div><p>Days a week we’re open on Market Street, including Sundays</p></div>
-    <div class="stat reveal d2"><div class="n"><span data-count="5" data-dec="1">5.0</span></div><p>Star rating on Google from our patients in Crewe</p></div>
+    <div class="stat reveal d1"><div class="n"><span data-count="455">455</span></div><p>Google reviews from our patients, with an overall rating of 5.0</p></div>
+    <div class="stat reveal d2"><div class="n"><span data-count="7">7</span></div><p>Days a week we’re open on Market Street, including Sundays</p></div>
+  </div>
+</section>
+
+<!-- Reviews -->
+<section class="reviews pad" id="reviews">
+  <div class="wrap">
+    <div class="rv-head">
+      <div>
+        <span class="eyebrow reveal">Google reviews</span>
+        <h2 class="reveal d1">455 reviews, <em>rated 5.0.</em></h2>
+        <p class="lead reveal d2">Since we opened on Market Street, our patients in Crewe have left 455 reviews on Google, and our rating is still 5.0. Here are some of the latest.</p>
+      </div>
+      <div class="rv-score reveal d2">
+        <div class="big">5.0</div>
+        <div class="stars" aria-label="5 out of 5 stars"><svg width="20" height="20"><use href="#rstar"/></svg><svg width="20" height="20"><use href="#rstar"/></svg><svg width="20" height="20"><use href="#rstar"/></svg><svg width="20" height="20"><use href="#rstar"/></svg><svg width="20" height="20"><use href="#rstar"/></svg></div>
+        <div class="count"><svg width="22" height="22" viewBox="0 0 48 48" aria-label="Google"><path fill="#FFC107" d="M43.6 20.5H42V20H24v8h11.3C33.7 32.7 29.2 36 24 36c-6.6 0-12-5.4-12-12s5.4-12 12-12c3.1 0 5.8 1.2 7.9 3.1l5.7-5.7C34 6.1 29.3 4 24 4 12.9 4 4 12.9 4 24s8.9 20 20 20 20-8.9 20-20c0-1.3-.1-2.4-.4-3.5z"/><path fill="#FF3D00" d="M6.3 14.7l6.6 4.8C14.7 15.1 19 12 24 12c3.1 0 5.8 1.2 7.9 3.1l5.7-5.7C34 6.1 29.3 4 24 4 16.3 4 9.7 8.3 6.3 14.7z"/><path fill="#4CAF50" d="M24 44c5.2 0 9.9-2 13.4-5.2l-6.2-5.2C29.2 35.1 26.7 36 24 36c-5.2 0-9.6-3.3-11.3-7.9l-6.5 5C9.5 39.6 16.2 44 24 44z"/><path fill="#1976D2" d="M43.6 20.5H42V20H24v8h11.3c-.8 2.2-2.2 4.2-4.1 5.6l6.2 5.2C37 39.2 44 34 44 24c0-1.3-.1-2.4-.4-3.5z"/></svg><span><b>455</b> Google reviews</span></div>
+        <a class="btn btn-gold" href="https://maps.app.goo.gl/gKNbP9rd3fRDtTBM7" target="_blank" rel="noopener">Read all 455 reviews<span class="arrow"><svg width="16" height="16"><use href="#arrow"/></svg></span></a>
+      </div>
+    </div>
+    <div class="rv-track reveal" id="rvTrack" tabindex="0" aria-label="Recent Google reviews">
+      <article class="rv-card">
+        <div class="rv-top"><span class="av" aria-hidden="true">D</span><div><b>Debbie M.</b><small>November 2026</small></div><svg class="g" width="22" height="22" viewBox="0 0 48 48" aria-label="Google"><path fill="#FFC107" d="M43.6 20.5H42V20H24v8h11.3C33.7 32.7 29.2 36 24 36c-6.6 0-12-5.4-12-12s5.4-12 12-12c3.1 0 5.8 1.2 7.9 3.1l5.7-5.7C34 6.1 29.3 4 24 4 12.9 4 4 12.9 4 24s8.9 20 20 20 20-8.9 20-20c0-1.3-.1-2.4-.4-3.5z"/><path fill="#FF3D00" d="M6.3 14.7l6.6 4.8C14.7 15.1 19 12 24 12c3.1 0 5.8 1.2 7.9 3.1l5.7-5.7C34 6.1 29.3 4 24 4 16.3 4 9.7 8.3 6.3 14.7z"/><path fill="#4CAF50" d="M24 44c5.2 0 9.9-2 13.4-5.2l-6.2-5.2C29.2 35.1 26.7 36 24 36c-5.2 0-9.6-3.3-11.3-7.9l-6.5 5C9.5 39.6 16.2 44 24 44z"/><path fill="#1976D2" d="M43.6 20.5H42V20H24v8h11.3c-.8 2.2-2.2 4.2-4.1 5.6l6.2 5.2C37 39.2 44 34 44 24c0-1.3-.1-2.4-.4-3.5z"/></svg></div>
+        <div class="stars" aria-label="5 out of 5 stars"><svg width="16" height="16"><use href="#rstar"/></svg><svg width="16" height="16"><use href="#rstar"/></svg><svg width="16" height="16"><use href="#rstar"/></svg><svg width="16" height="16"><use href="#rstar"/></svg><svg width="16" height="16"><use href="#rstar"/></svg></div>
+        <p>“I had a very positive experience here! A full vision exam, plus a scan to check my eye health. What made this practice different to where I have been before was I managed to have an in-depth conversation about my ongoing dry eye issue. I was given personalised advice and prescribed the correct medication for my condition. My current prescription glasses were checked, and were fine. Very professional.”</p>
+        <button class="more" type="button">Read more</button>
+        <div class="src">Posted on Google</div>
+      </article>
+      <article class="rv-card">
+        <div class="rv-top"><span class="av" aria-hidden="true">B</span><div><b>Bryn S.</b><small>November 2026</small></div><svg class="g" width="22" height="22" viewBox="0 0 48 48" aria-label="Google"><path fill="#FFC107" d="M43.6 20.5H42V20H24v8h11.3C33.7 32.7 29.2 36 24 36c-6.6 0-12-5.4-12-12s5.4-12 12-12c3.1 0 5.8 1.2 7.9 3.1l5.7-5.7C34 6.1 29.3 4 24 4 12.9 4 4 12.9 4 24s8.9 20 20 20 20-8.9 20-20c0-1.3-.1-2.4-.4-3.5z"/><path fill="#FF3D00" d="M6.3 14.7l6.6 4.8C14.7 15.1 19 12 24 12c3.1 0 5.8 1.2 7.9 3.1l5.7-5.7C34 6.1 29.3 4 24 4 16.3 4 9.7 8.3 6.3 14.7z"/><path fill="#4CAF50" d="M24 44c5.2 0 9.9-2 13.4-5.2l-6.2-5.2C29.2 35.1 26.7 36 24 36c-5.2 0-9.6-3.3-11.3-7.9l-6.5 5C9.5 39.6 16.2 44 24 44z"/><path fill="#1976D2" d="M43.6 20.5H42V20H24v8h11.3c-.8 2.2-2.2 4.2-4.1 5.6l6.2 5.2C37 39.2 44 34 44 24c0-1.3-.1-2.4-.4-3.5z"/></svg></div>
+        <div class="stars" aria-label="5 out of 5 stars"><svg width="16" height="16"><use href="#rstar"/></svg><svg width="16" height="16"><use href="#rstar"/></svg><svg width="16" height="16"><use href="#rstar"/></svg><svg width="16" height="16"><use href="#rstar"/></svg><svg width="16" height="16"><use href="#rstar"/></svg></div>
+        <p>“Really friendly staff and the optician obviously really knew his stuff”</p>
+        <button class="more" type="button">Read more</button>
+        <div class="src">Posted on Google</div>
+      </article>
+      <article class="rv-card">
+        <div class="rv-top"><span class="av" aria-hidden="true">J</span><div><b>Jan O.</b><small>November 2026</small></div><svg class="g" width="22" height="22" viewBox="0 0 48 48" aria-label="Google"><path fill="#FFC107" d="M43.6 20.5H42V20H24v8h11.3C33.7 32.7 29.2 36 24 36c-6.6 0-12-5.4-12-12s5.4-12 12-12c3.1 0 5.8 1.2 7.9 3.1l5.7-5.7C34 6.1 29.3 4 24 4 12.9 4 4 12.9 4 24s8.9 20 20 20 20-8.9 20-20c0-1.3-.1-2.4-.4-3.5z"/><path fill="#FF3D00" d="M6.3 14.7l6.6 4.8C14.7 15.1 19 12 24 12c3.1 0 5.8 1.2 7.9 3.1l5.7-5.7C34 6.1 29.3 4 24 4 16.3 4 9.7 8.3 6.3 14.7z"/><path fill="#4CAF50" d="M24 44c5.2 0 9.9-2 13.4-5.2l-6.2-5.2C29.2 35.1 26.7 36 24 36c-5.2 0-9.6-3.3-11.3-7.9l-6.5 5C9.5 39.6 16.2 44 24 44z"/><path fill="#1976D2" d="M43.6 20.5H42V20H24v8h11.3c-.8 2.2-2.2 4.2-4.1 5.6l6.2 5.2C37 39.2 44 34 44 24c0-1.3-.1-2.4-.4-3.5z"/></svg></div>
+        <div class="stars" aria-label="5 out of 5 stars"><svg width="16" height="16"><use href="#rstar"/></svg><svg width="16" height="16"><use href="#rstar"/></svg><svg width="16" height="16"><use href="#rstar"/></svg><svg width="16" height="16"><use href="#rstar"/></svg><svg width="16" height="16"><use href="#rstar"/></svg></div>
+        <p>“Absolute amazing staff!Had the BEST experience ever out of all the eye tests I have ever had,the Opthalmologist thoroughly explained all about my eyes  in fine detail which I have never experienced before! I even had first class help in choosing my next frame which I haven’t experienced for many years,he was so lovely and was completely honest in advising suitability.<br><br>I will continue having all my future eyetests here from now on,I cannot recommend Crewe Optical enough!”</p>
+        <button class="more" type="button">Read more</button>
+        <div class="src">Posted on Google</div>
+      </article>
+      <article class="rv-card">
+        <div class="rv-top"><span class="av" aria-hidden="true">T</span><div><b>Tapiwa M.</b><small>November 2026</small></div><svg class="g" width="22" height="22" viewBox="0 0 48 48" aria-label="Google"><path fill="#FFC107" d="M43.6 20.5H42V20H24v8h11.3C33.7 32.7 29.2 36 24 36c-6.6 0-12-5.4-12-12s5.4-12 12-12c3.1 0 5.8 1.2 7.9 3.1l5.7-5.7C34 6.1 29.3 4 24 4 12.9 4 4 12.9 4 24s8.9 20 20 20 20-8.9 20-20c0-1.3-.1-2.4-.4-3.5z"/><path fill="#FF3D00" d="M6.3 14.7l6.6 4.8C14.7 15.1 19 12 24 12c3.1 0 5.8 1.2 7.9 3.1l5.7-5.7C34 6.1 29.3 4 24 4 16.3 4 9.7 8.3 6.3 14.7z"/><path fill="#4CAF50" d="M24 44c5.2 0 9.9-2 13.4-5.2l-6.2-5.2C29.2 35.1 26.7 36 24 36c-5.2 0-9.6-3.3-11.3-7.9l-6.5 5C9.5 39.6 16.2 44 24 44z"/><path fill="#1976D2" d="M43.6 20.5H42V20H24v8h11.3c-.8 2.2-2.2 4.2-4.1 5.6l6.2 5.2C37 39.2 44 34 44 24c0-1.3-.1-2.4-.4-3.5z"/></svg></div>
+        <div class="stars" aria-label="5 out of 5 stars"><svg width="16" height="16"><use href="#rstar"/></svg><svg width="16" height="16"><use href="#rstar"/></svg><svg width="16" height="16"><use href="#rstar"/></svg><svg width="16" height="16"><use href="#rstar"/></svg><svg width="16" height="16"><use href="#rstar"/></svg></div>
+        <p>“The service was excellent, characterised by thorough explanations throughout the process. This facility is highly recommended for optometric examinations.”</p>
+        <button class="more" type="button">Read more</button>
+        <div class="src">Posted on Google</div>
+      </article>
+      <article class="rv-card">
+        <div class="rv-top"><span class="av" aria-hidden="true">N</span><div><b>Naipaporn N.</b><small>November 2026</small></div><svg class="g" width="22" height="22" viewBox="0 0 48 48" aria-label="Google"><path fill="#FFC107" d="M43.6 20.5H42V20H24v8h11.3C33.7 32.7 29.2 36 24 36c-6.6 0-12-5.4-12-12s5.4-12 12-12c3.1 0 5.8 1.2 7.9 3.1l5.7-5.7C34 6.1 29.3 4 24 4 12.9 4 4 12.9 4 24s8.9 20 20 20 20-8.9 20-20c0-1.3-.1-2.4-.4-3.5z"/><path fill="#FF3D00" d="M6.3 14.7l6.6 4.8C14.7 15.1 19 12 24 12c3.1 0 5.8 1.2 7.9 3.1l5.7-5.7C34 6.1 29.3 4 24 4 16.3 4 9.7 8.3 6.3 14.7z"/><path fill="#4CAF50" d="M24 44c5.2 0 9.9-2 13.4-5.2l-6.2-5.2C29.2 35.1 26.7 36 24 36c-5.2 0-9.6-3.3-11.3-7.9l-6.5 5C9.5 39.6 16.2 44 24 44z"/><path fill="#1976D2" d="M43.6 20.5H42V20H24v8h11.3c-.8 2.2-2.2 4.2-4.1 5.6l6.2 5.2C37 39.2 44 34 44 24c0-1.3-.1-2.4-.4-3.5z"/></svg></div>
+        <div class="stars" aria-label="5 out of 5 stars"><svg width="16" height="16"><use href="#rstar"/></svg><svg width="16" height="16"><use href="#rstar"/></svg><svg width="16" height="16"><use href="#rstar"/></svg><svg width="16" height="16"><use href="#rstar"/></svg><svg width="16" height="16"><use href="#rstar"/></svg></div>
+        <p>“Amazing service!! Thanks to Umar and the doctor, they gave us free eye checkups and explained everything very well. Definitely recommend for anyone who’s looking for a pair of glasses”</p>
+        <button class="more" type="button">Read more</button>
+        <div class="src">Posted on Google</div>
+      </article>
+      <article class="rv-card">
+        <div class="rv-top"><span class="av" aria-hidden="true">A</span><div><b>Angel B.</b><small>November 2026</small></div><svg class="g" width="22" height="22" viewBox="0 0 48 48" aria-label="Google"><path fill="#FFC107" d="M43.6 20.5H42V20H24v8h11.3C33.7 32.7 29.2 36 24 36c-6.6 0-12-5.4-12-12s5.4-12 12-12c3.1 0 5.8 1.2 7.9 3.1l5.7-5.7C34 6.1 29.3 4 24 4 12.9 4 4 12.9 4 24s8.9 20 20 20 20-8.9 20-20c0-1.3-.1-2.4-.4-3.5z"/><path fill="#FF3D00" d="M6.3 14.7l6.6 4.8C14.7 15.1 19 12 24 12c3.1 0 5.8 1.2 7.9 3.1l5.7-5.7C34 6.1 29.3 4 24 4 16.3 4 9.7 8.3 6.3 14.7z"/><path fill="#4CAF50" d="M24 44c5.2 0 9.9-2 13.4-5.2l-6.2-5.2C29.2 35.1 26.7 36 24 36c-5.2 0-9.6-3.3-11.3-7.9l-6.5 5C9.5 39.6 16.2 44 24 44z"/><path fill="#1976D2" d="M43.6 20.5H42V20H24v8h11.3c-.8 2.2-2.2 4.2-4.1 5.6l6.2 5.2C37 39.2 44 34 44 24c0-1.3-.1-2.4-.4-3.5z"/></svg></div>
+        <div class="stars" aria-label="5 out of 5 stars"><svg width="16" height="16"><use href="#rstar"/></svg><svg width="16" height="16"><use href="#rstar"/></svg><svg width="16" height="16"><use href="#rstar"/></svg><svg width="16" height="16"><use href="#rstar"/></svg><svg width="16" height="16"><use href="#rstar"/></svg></div>
+        <p>“Amazing service! Felt so welcome and they were so professional!”</p>
+        <button class="more" type="button">Read more</button>
+        <div class="src">Posted on Google</div>
+      </article>
+      <article class="rv-card">
+        <div class="rv-top"><span class="av" aria-hidden="true">S</span><div><b>subfire66</b><small>November 2026</small></div><svg class="g" width="22" height="22" viewBox="0 0 48 48" aria-label="Google"><path fill="#FFC107" d="M43.6 20.5H42V20H24v8h11.3C33.7 32.7 29.2 36 24 36c-6.6 0-12-5.4-12-12s5.4-12 12-12c3.1 0 5.8 1.2 7.9 3.1l5.7-5.7C34 6.1 29.3 4 24 4 12.9 4 4 12.9 4 24s8.9 20 20 20 20-8.9 20-20c0-1.3-.1-2.4-.4-3.5z"/><path fill="#FF3D00" d="M6.3 14.7l6.6 4.8C14.7 15.1 19 12 24 12c3.1 0 5.8 1.2 7.9 3.1l5.7-5.7C34 6.1 29.3 4 24 4 16.3 4 9.7 8.3 6.3 14.7z"/><path fill="#4CAF50" d="M24 44c5.2 0 9.9-2 13.4-5.2l-6.2-5.2C29.2 35.1 26.7 36 24 36c-5.2 0-9.6-3.3-11.3-7.9l-6.5 5C9.5 39.6 16.2 44 24 44z"/><path fill="#1976D2" d="M43.6 20.5H42V20H24v8h11.3c-.8 2.2-2.2 4.2-4.1 5.6l6.2 5.2C37 39.2 44 34 44 24c0-1.3-.1-2.4-.4-3.5z"/></svg></div>
+        <div class="stars" aria-label="5 out of 5 stars"><svg width="16" height="16"><use href="#rstar"/></svg><svg width="16" height="16"><use href="#rstar"/></svg><svg width="16" height="16"><use href="#rstar"/></svg><svg width="16" height="16"><use href="#rstar"/></svg><svg width="16" height="16"><use href="#rstar"/></svg></div>
+        <p>“They eye test was really straight forward, all the suggestions were really good and also the price is very decent compared to the competitors”</p>
+        <button class="more" type="button">Read more</button>
+        <div class="src">Posted on Google</div>
+      </article>
+      <article class="rv-card">
+        <div class="rv-top"><span class="av" aria-hidden="true">G</span><div><b>Georgia H.</b><small>November 2026</small></div><svg class="g" width="22" height="22" viewBox="0 0 48 48" aria-label="Google"><path fill="#FFC107" d="M43.6 20.5H42V20H24v8h11.3C33.7 32.7 29.2 36 24 36c-6.6 0-12-5.4-12-12s5.4-12 12-12c3.1 0 5.8 1.2 7.9 3.1l5.7-5.7C34 6.1 29.3 4 24 4 12.9 4 4 12.9 4 24s8.9 20 20 20 20-8.9 20-20c0-1.3-.1-2.4-.4-3.5z"/><path fill="#FF3D00" d="M6.3 14.7l6.6 4.8C14.7 15.1 19 12 24 12c3.1 0 5.8 1.2 7.9 3.1l5.7-5.7C34 6.1 29.3 4 24 4 16.3 4 9.7 8.3 6.3 14.7z"/><path fill="#4CAF50" d="M24 44c5.2 0 9.9-2 13.4-5.2l-6.2-5.2C29.2 35.1 26.7 36 24 36c-5.2 0-9.6-3.3-11.3-7.9l-6.5 5C9.5 39.6 16.2 44 24 44z"/><path fill="#1976D2" d="M43.6 20.5H42V20H24v8h11.3c-.8 2.2-2.2 4.2-4.1 5.6l6.2 5.2C37 39.2 44 34 44 24c0-1.3-.1-2.4-.4-3.5z"/></svg></div>
+        <div class="stars" aria-label="5 out of 5 stars"><svg width="16" height="16"><use href="#rstar"/></svg><svg width="16" height="16"><use href="#rstar"/></svg><svg width="16" height="16"><use href="#rstar"/></svg><svg width="16" height="16"><use href="#rstar"/></svg><svg width="16" height="16"><use href="#rstar"/></svg></div>
+        <p>“Lovely people got me sorted straight away<br>Very polite hard workers”</p>
+        <button class="more" type="button">Read more</button>
+        <div class="src">Posted on Google</div>
+      </article>
+    </div>
+    <div class="rv-foot">
+      <p>The latest reviews from Crewe Optical’s Google listing.</p>
+      <div class="rv-nav"><button class="prev" type="button" aria-label="Previous reviews"><svg width="18" height="18"><use href="#arrow"/></svg></button><button class="next" type="button" aria-label="Next reviews"><svg width="18" height="18"><use href="#arrow"/></svg></button></div>
+    </div>
   </div>
 </section>
 
 <!-- Technology -->
-<section class="tech pad" id="technology">
+<section class="tech pad" id="technology" style="margin-top:24px">
   <div class="wrap">
     <div>
       <span class="eyebrow reveal">Technology &amp; lenses</span>
@@ -752,28 +856,6 @@
       <figure><img src="images/childrens-frames.jpg" alt=""><span class="ph-note">Holding image from another Spring View practice.</span></figure>
       <figure><img src="images/frame-wall-angle.jpg" alt="" style="object-position:85% 50%"><span class="ph-note">Holding image from another Spring View practice.</span></figure>
       <figure><img src="images/eye-test.jpg" alt="" style="object-position:62% 40%"><span class="ph-note">Holding image from another Spring View practice.</span></figure>
-    </div>
-  </div>
-</section>
-
-<!-- Reviews -->
-<section class="reviews" id="reviews" style="padding:60px 0 120px">
-  <div class="wrap">
-    <div class="panel">
-      <div>
-        <span class="eyebrow reveal">Google reviews</span>
-        <h2 class="reveal d1">Hear it from <em>our patients.</em></h2>
-        <p class="lead reveal d2">Thanks to our patients here in Crewe, we’ve built up a great collection of Google reviews. See what they say about their eye tests, our team and their new glasses.</p>
-        <div class="reveal d3" style="margin-top:30px"><a class="btn btn-dark" href="https://maps.app.goo.gl/gKNbP9rd3fRDtTBM7" target="_blank" rel="noopener">Read our Google reviews<span class="arrow"><svg width="16" height="16"><use href="#arrow"/></svg></span></a></div>
-      </div>
-      <div class="g-card reveal d2">
-        <div class="row">
-          <svg width="30" height="30" viewBox="0 0 48 48" aria-label="Google"><path fill="#FFC107" d="M43.6 20.5H42V20H24v8h11.3C33.7 32.7 29.2 36 24 36c-6.6 0-12-5.4-12-12s5.4-12 12-12c3.1 0 5.8 1.2 7.9 3.1l5.7-5.7C34 6.1 29.3 4 24 4 12.9 4 4 12.9 4 24s8.9 20 20 20 20-8.9 20-20c0-1.3-.1-2.4-.4-3.5z"/><path fill="#FF3D00" d="M6.3 14.7l6.6 4.8C14.7 15.1 19 12 24 12c3.1 0 5.8 1.2 7.9 3.1l5.7-5.7C34 6.1 29.3 4 24 4 16.3 4 9.7 8.3 6.3 14.7z"/><path fill="#4CAF50" d="M24 44c5.2 0 9.9-2 13.4-5.2l-6.2-5.2C29.2 35.1 26.7 36 24 36c-5.2 0-9.6-3.3-11.3-7.9l-6.5 5C9.5 39.6 16.2 44 24 44z"/><path fill="#1976D2" d="M43.6 20.5H42V20H24v8h11.3c-.8 2.2-2.2 4.2-4.1 5.6l6.2 5.2C37 39.2 44 34 44 24c0-1.3-.1-2.4-.4-3.5z"/></svg>
-          <span class="live">Live feed</span>
-        </div>
-        <div class="skeleton"><i></i><i></i><i></i></div>
-        <p>Your latest Google reviews appear here automatically, styled to match the site.</p>
-      </div>
     </div>
   </div>
 </section>
@@ -974,6 +1056,15 @@
     document.getElementById('dotB').setAttribute('startOffset', d);
   };
   (document.fonts ? document.fonts.ready : Promise.resolve()).then(placeDots);
+
+  // Reviews carousel
+  const track = document.getElementById('rvTrack');
+  const step = () => { const c = track.querySelector('.rv-card'); return c ? c.offsetWidth + 20 : 300; };
+  document.querySelector('.rv-nav .prev').addEventListener('click', () => track.scrollBy({left:-step()}));
+  document.querySelector('.rv-nav .next').addEventListener('click', () => track.scrollBy({left:step()}));
+  const markLong = () => track.querySelectorAll('.rv-card').forEach(c => { const p = c.querySelector('p'); c.classList.toggle('long', c.classList.contains('open') || p.scrollHeight > p.clientHeight + 2); });
+  track.querySelectorAll('.more').forEach(b => b.addEventListener('click', () => { const c = b.closest('.rv-card'); const o = c.classList.toggle('open'); b.textContent = o ? 'Show less' : 'Read more'; }));
+  (document.fonts ? document.fonts.ready : Promise.resolve()).then(markLong); addEventListener('resize', markLong);
 
   // Demo form
   document.getElementById('enquiry').addEventListener('submit', e => { e.preventDefault(); document.getElementById('thanks').style.display = 'block'; e.target.reset(); });
